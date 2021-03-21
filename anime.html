@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animeweb</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav id="mySidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="index.html">Trendings</a>
+		<a href="Upcoming.html">Upcoming</a>
+		<a href="#">Clients</a>
+		<a href="#">Contact</a>
+	</nav>
+
+    <div class="topnav">
+        <span id = "openNav"  onclick="openNav()">&#9776; </span>
+        <div id="img"></div>
+        <div id="img2"></div>
+        <h1 id="title">GALLIANIME</h1>
+        <form id="SubmitBox">
+            <input id="searchbox" type="text" placeholder="Search">
+            <img id="searchicon" src="search.png" width="35">
+
+        </form>
+    </div>
+    
+    <div id="Content">
+        <div id="animepage">
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright by Banc0ock</p>
+    </footer>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+    <script src="nav.js"></script>
+    <script>
+        $(document).ready(() => {
+        var anime = "https://api.jikan.moe/v3/anime/"+localStorage.getItem("animeid");
+        GetAnime(anime);
+    });
+        console.log(localStorage.getItem("animeid"));
+    </script>
+</body>
+</html>
